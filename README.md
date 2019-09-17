@@ -1,1 +1,1 @@
-# NTY-bestsellers-classification-project
+# NYT-bestsellers-classification-project

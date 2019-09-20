@@ -4,12 +4,13 @@ __pycache__/
 *$py.class
 
 
+
 # ignore pickle and json
 *.pkl
 *.json
 
 # ignore .csv files
-#*.csv
+*.csv
 
 # ignore .txt files
 *.txt

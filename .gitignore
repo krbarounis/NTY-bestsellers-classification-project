@@ -10,7 +10,7 @@ __pycache__/
 *.json
 
 # ignore .csv files
-#*.csv
+*.csv
 
 # ignore .txt files
 *.txt

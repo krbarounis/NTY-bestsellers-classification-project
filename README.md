@@ -42,8 +42,13 @@ In order to both prepare and understand the data prior to running models, I comp
 ### Cleaning
 
 Some preprocessing steps:
+- removing duplicate books returned by the NYT API 
+- adding a column of 0's and 1's for the target variable where 1's reflect bestselling books
+- removing duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers, but we don't know this information until we join the data and identifying books that were returned from both NYT API and Goodreads)
 - converting non-categorical data types from strings to numbers
-- 
+- removing and/or filling in rows with null values
+- grouping imprints and subsidiaries of the top 5 publishing companies into single groups
+
 
 ### Visuals
 
@@ -51,19 +56,19 @@ As part of the EDA process, I created a number of visuals using Python's Matplot
 
 ![](/Plots/Top_authors.png)
 
-ADD HERE
+The top authors account for more bestsellers than they do non-bestsellers, while the reverse is true for the remaining authors.
 
 ![](/Plots/Publish_month_and_rating.png)
 
-This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers.
+This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers. 
 
 ![](/Plots/Ratings.png)
 
-The average Goodreads rating for NYT bestsellers is higher (~4.2) than the average rating of non-bestsellers (~4.0). Additionally, the range of ratings is smaller for bestsellers.
+The average Goodreads rating for NYT bestsellers is slightly higher (~4.2) than the average rating of non-bestsellers (~4.0). Additionally, the range of ratings is smaller for bestsellers.
 
 ![](/Plots/Top_5_publishing_companies.png)
 
-Out of the 551 bestselling books in the data set, 307 were published by the Top 5 publishing companies (include top 5 list here). However, the Top 5 also account for a large proportion of non-bestselling books. They have a big market share but ultimately only published 6% more bestsellers.
+Out of the 551 bestselling books in the data set, 307 were published by the Top 5 publishing companies (include top 5 list here). However, the Top 5 also account for a large proportion of the non-bestselling books. It is evident that the Top 5 have a big market share, but ultimately these companies only published 6% more bestsellers out of all the books they account for when compared to the remaining publishing companies in the data set.
 
 
 ## Modeling
@@ -97,7 +102,9 @@ EXPLAIN
 
 ## Future Improvements:
 
-- More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases.
+- More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. 
+
+- Different NYT API link: the link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. I would like to use a different url which is better suited for returning books within a certain date range. 
 
 - Additional features: I would like to use NLP to...
 

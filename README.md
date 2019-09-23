@@ -6,7 +6,7 @@ This classification project aims to predict if a book will appear on any of the 
 
 ## Tech Stack
 
-- Python
+- Python + Python libraries
     - Requests
     - Selenium
     - Beautiful Soup
@@ -17,7 +17,7 @@ This classification project aims to predict if a book will appear on any of the 
     
 ## Process
 
-I gathered data through the New York Times' Book API as well as by scraping GoodReads.com. Bestsellers from 2017 to the present were sourced from the NYT API, while non-bestsellers from 2017-2018 were sourced from GoodReads. Ultimately, features for each book (both bestsellers and non-bestsellers) were also scapred from GoodReads.
+I gathered data through the New York Times' Book API as well as by scraping GoodReads.com. Bestsellers from 2017 to the present were sourced from the NYT API, while non-bestsellers from 2017-2018 were sourced from GoodReads. Ultimately, features for each book (both bestsellers and non-bestsellers) were also scraped from GoodReads.
 
 
 ## The Data & EDA
@@ -39,17 +39,31 @@ In order to both prepare and understand the data prior to running models, I comp
 - Publishing company
 - Month of publishing
 
+### Cleaning
+
+Some preprocessing steps:
+- converting non-categorical data types from strings to numbers
+- 
+
 ### Visuals
 
 As part of the EDA process, I created a number of visuals using Python's Matplotlib and Seaborn libraries. 
 
 ![](/Plots/Top_authors.png)
 
+ADD HERE
+
 ![](/Plots/Publish_month_and_rating.png)
+
+This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers.
 
 ![](/Plots/Ratings.png)
 
+The average Goodreads rating for NYT bestsellers is higher (~4.2) than the average rating of non-bestsellers (~4.0). Additionally, the range of ratings is smaller for bestsellers.
+
 ![](/Plots/Top_5_publishing_companies.png)
+
+Out of the 551 bestselling books in the data set, 307 were published by the Top 5 publishing companies (include top 5 list here). However, the Top 5 also account for a large proportion of non-bestselling books. They have a big market share but ultimately only published 6% more bestsellers.
 
 
 ## Modeling
@@ -81,12 +95,11 @@ EXPLAIN
 EXPLAIN
 
 
-
 ## Future Improvements:
 
 - More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases.
 
-- Additional features: I would like to use NLP to 
+- Additional features: I would like to use NLP to...
 
 
 

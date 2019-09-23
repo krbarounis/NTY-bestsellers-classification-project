@@ -52,19 +52,19 @@ Some preprocessing steps:
 
 ### Visuals
 
-As part of the EDA process, I created a number of visuals using Python's Matplotlib and Seaborn libraries. 
+To better understand the distribution of the data, I created a number of visuals using Python's Matplotlib and Seaborn libraries. 
 
 ![](/Plots/Top_authors.png)
 
-The top authors account for more bestsellers than they do non-bestsellers, while the reverse is true for the remaining authors.
+Of the 1646 total books in the data set, only 50 were written by top authors. However, as indicated by the chart above, the top authors account for more bestsellers than they do non-bestsellers. Of the 50 books written by top authors, 29 were bestsellers, equivalent to 58%. In comparison, of the 1,596 books in the data set that were not written by top authors, 522 were bestsellers, equivalent to 33%. This category turns out to be one of the strongest predictors of being a bestselling book in the final model.
 
 ![](/Plots/Publish_month_and_rating.png)
 
-This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers. 
+This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers. These two features also end up being two of the strongest predictors of NYT bestsellers in the final model.
 
 ![](/Plots/Ratings.png)
 
-The average Goodreads rating for NYT bestsellers is slightly higher (~4.2) than the average rating of non-bestsellers (~4.0). Additionally, the range of ratings is smaller for bestsellers.
+The average Goodreads rating for NYT bestsellers is only slightly higher (~4.03) than the average rating of non-bestsellers (~3.96). However, it is notable that the range of ratings is smaller for bestsellers (3.04-4.61) than the range for non-bestsellers (2.79-5.0). Rating does not ultimately have a large predictive impact in the final model.
 
 ![](/Plots/Top_5_publishing_companies.png)
 
@@ -91,9 +91,28 @@ The model which performed the best in terms of accuracy was Logistic Regression 
 
 The confusion matrix shows that the model correctly predicted 41 positives and 202 negatives, while incorrectly classifying 20 negatives and 67 positives for a final accuracy score of ~74%. Given the class imbalance of the data set, the model performed better when classifying the more frequent class (negatives).
 
+#### Coefficients
+
+Features which most contributed to a higher likelihood of being in the positive class (as indicated by a positive, large coefficient):
+- Top author: Y
+- Genre: politics
+- Publish month: December
+- Genre: biography
+- Publish month: November
+- Publish company: Penguin Random House
+
+Features which most contributed to a lower likelihood of being in the positive class (as indicated by a negative, large coefficient):
+
+- Genre: horror
+- Genre: science fiction
+- Genre: fantasy
+- Genre: short story
+- Genre: fiction
+- Genre: young adult
 
 ## Future Improvements:
 
 - More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. 
 
 - Different NYT API link: The link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. This was computationally inefficient as I had to store the entire list from the API and then iterate over it to filter out books that appeared on a list before 2017. Given more time, I would have liked to investigated the API further to find a url that was better suited for returning books within a certain date range. 
+

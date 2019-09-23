@@ -24,7 +24,7 @@ I gathered data through the New York Times' Book API as well as by scraping Good
 
 In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps as well as exploritory data analysis. 
 
-### Observations:
+### Observations
 
 - 1646 total observations
     - 551 bestsellers
@@ -42,12 +42,12 @@ In order to both prepare and understand the data prior to running models, I comp
 ### Cleaning
 
 Some preprocessing steps:
-- removing duplicate books returned by the NYT API 
-- adding a column of 0's and 1's for the target variable where 1's reflect bestselling books
+- Removing duplicate books returned by the NYT API 
+- Adding a column of 0's and 1's for the target variable where 1's reflect bestselling books
 - removing duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers, but we don't know this information until we join the data and identifying books that were returned from both NYT API and Goodreads)
-- converting non-categorical data types from strings to numbers
-- removing and/or filling in rows with null values
-- grouping imprints and subsidiaries of the top 5 publishing companies into single groups
+- Converting non-categorical data types from strings to numbers
+- Removing and/or filling in rows with null values
+- Grouping imprints and subsidiaries of the top 5 publishing companies into single groups
 
 
 ### Visuals
@@ -85,32 +85,15 @@ The confusion matrix shows that no observations were classified as positives (be
 
 ### Final Model: Logistic Regression
 
-The model which performed the best in terms of accuracy was Logistic Regression with Sklearn's default parameters (i.e. C of 1 and penalty parameter of L1). 
+The model which performed the best in terms of accuracy was Logistic Regression with Sklearn's default parameters (i.e. C of 1 and penalty parameter of L2 (Ridge)). 
 
 ![](/Plots/Confusion_Matrix_Log.png)
 
 The confusion matrix shows that the model correctly predicted 41 positives and 202 negatives, while incorrectly classifying 20 negatives and 67 positives for a final accuracy score of ~74%. Given the class imbalance of the data set, the model performed better when classifying the more frequent class (negatives).
-
-#### Parameters
-
-- Penalty: L1 or L2
-EXPLAIN
-
-- C: C=1/lamdba
-EXPLAIN
 
 
 ## Future Improvements:
 
 - More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. 
 
-- Different NYT API link: the link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. I would like to use a different url which is better suited for returning books within a certain date range. 
-
-- Additional features: I would like to use NLP to...
-
-
-
-
-
-
-
+- Different NYT API link: The link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. This was computationally inefficient as I had to store the entire list from the API and then iterate over it to filter out books that appeared on a list before 2017. Given more time, I would have liked to investigated the API further to find a url that was better suited for returning books within a certain date range. 

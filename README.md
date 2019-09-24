@@ -24,21 +24,6 @@ I gathered data through the New York Times' Book API as well as by scraping Good
 
 In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps as well as exploritory data analysis. 
 
-### Observations
-
-- 1646 total observations
-    - 551 bestsellers
-    - 1095 non-bestsellers
-    
-### Features
-
-- Part of a series (Y/N)
-- Goodreads rating (based on user input)
-- Goodreads genre (based on most user tags)
-- Top author (Y/N) (list of Forbes' top earning authors 2017 & 2018)
-- Publishing company
-- Month of publishing
-
 ### Cleaning
 
 Some preprocessing steps:
@@ -49,6 +34,19 @@ Some preprocessing steps:
 - Removing and/or filling in rows with null values
 - Grouping imprints and subsidiaries of the top 5 publishing companies into single groups
 
+
+### Observations & Features
+
+- 1646 total observations
+    - 551 bestsellers
+    - 1095 non-bestsellers
+- 37 features after getting dummies for categorical data
+    - Part of a series (Y/N)
+    - Goodreads rating (based on user input)
+    - Goodreads genre (based on most user tags)
+    - Top author (Y/N) (list of Forbes' top earning authors 2017 & 2018)
+    - Publishing company
+    - Month of publishing
 
 ### Visuals
 

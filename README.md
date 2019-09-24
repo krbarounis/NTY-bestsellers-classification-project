@@ -56,7 +56,7 @@ To better understand the distribution of the data, I created a number of visuals
 
 Of the 1646 total books in the data set, only 50 were written by top authors. However, as indicated by the chart above, the top authors account for more bestsellers than they do non-bestsellers. Of the 50 books written by top authors, 29 were bestsellers, equivalent to 58%. In comparison, of the 1,596 books in the data set that were not written by top authors, 522 were bestsellers, equivalent to 33%. This category turns out to be one of the strongest predictors of being a bestselling book in the final model.
 
-![](/Plots/Publish_month_and_rating.png)
+![](/Plots/Publish_month_rating.png)
 
 This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers. These two features also end up being two of the strongest predictors of NYT bestsellers in the final model.
 

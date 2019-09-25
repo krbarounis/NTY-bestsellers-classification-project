@@ -1,13 +1,21 @@
 # NYT-bestsellers-classification-project
 
 [Process](#process)
-[The Data & EDA](#the-data-&-eda)
+<br>
+[The Data and EDA](#data-and-eda)
+<br>
     [Cleaning](#cleaning)
-    [Observations & Features](#observations-&-features)
+    <br>
+    [Observations and Features](#observations-and-features)
+    <br>
     [Visuals](#visuals)
+    <br>
 [Modeling](#modeling)
-[Baseline Model](#baseline:-dummy-classifier)
-[Final Model](#final-model:-logistic-regression)
+<br>
+[Baseline Model](#baseline-dummy-classifier)
+<br>
+[Final Model](#final-model-logistic-regression)
+<br>
 [Future Improvements](#future-improvements)
 
 ## Intro
@@ -30,7 +38,7 @@ This classification project aims to predict if a book will appear on any of the 
 I gathered data through the New York Times' Book API as well as by scraping GoodReads.com. Bestsellers from 2017 to the present were sourced from the NYT API, while non-bestsellers from 2017-2018 were sourced from GoodReads. Ultimately, features for each book (both bestsellers and non-bestsellers) were also scraped from GoodReads.
 
 
-## The Data & EDA
+## Data and EDA
 
 In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps as well as exploritory data analysis. 
 
@@ -45,7 +53,7 @@ Some preprocessing steps:
 - Grouping imprints and subsidiaries of the top 5 publishing companies into single groups
 
 
-### Observations & Features
+### Observations and Features
 
 - 1646 total observations
     - 551 bestsellers

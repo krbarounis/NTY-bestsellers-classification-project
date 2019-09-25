@@ -1,5 +1,15 @@
 # NYT-bestsellers-classification-project
 
+[Process](#process)
+[The Data & EDA](#the-data-&-eda)
+    [Cleaning](#cleaning)
+    [Observations & Features](#observations-&-features)
+    [Visuals](#visuals)
+[Modeling](#modeling)
+[Baseline Model](#baseline:-dummy-classifier)
+[Final Model](#final-model:-logistic-regression)
+[Future Improvements](#future-improvements)
+
 ## Intro
 
 This classification project aims to predict if a book will appear on any of the New York Times bestseller lists.

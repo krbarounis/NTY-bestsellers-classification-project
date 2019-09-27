@@ -4,17 +4,17 @@
 <br>
 [The Data and EDA](#data-and-eda)
 <br>
-    [Cleaning](#cleaning)
+    - [Cleaning](#cleaning)
     <br>
-    [Observations and Features](#observations-and-features)
+    - [Observations and Features](#observations-and-features)
     <br>
-    [Visuals](#visuals)
+    - [Visuals](#visuals)
     <br>
 [Modeling](#modeling)
 <br>
-[Baseline Model](#baseline-dummy-classifier)
+    - [Baseline Model](#baseline-dummy-classifier)
 <br>
-[Final Model](#final-model-logistic-regression)
+    - [Final Model](#final-model-logistic-regression)
 <br>
 [Future Improvements](#future-improvements)
 
@@ -37,7 +37,6 @@ This classification project aims to predict if a book will appear on any of the 
 
 I gathered data through the New York Times' Book API as well as by scraping GoodReads.com. Bestsellers from 2017 to the present were sourced from the NYT API, while non-bestsellers from 2017-2018 were sourced from GoodReads. Ultimately, features for each book (both bestsellers and non-bestsellers) were also scraped from GoodReads.
 
-
 ## Data and EDA
 
 In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps as well as exploritory data analysis. 
@@ -52,19 +51,29 @@ Some preprocessing steps:
 - Removing and/or filling in rows with null values
 - Grouping imprints and subsidiaries of the top 5 publishing companies into single groups
 
-
 ### Observations and Features
 
 - 1646 total observations
     - 551 bestsellers
     - 1095 non-bestsellers
-- 37 features after getting dummies for categorical data
-    - Part of a series (Yes/No)
+- Data from scraping:
+    - Title
+    - Author
     - Goodreads rating (based on user input)
     - Goodreads genre (based on most user tags)
-    - Top author (Y/N) (list of Forbes' top earning authors 2017 & 2018)
     - Publishing company
-    - Month of publishing
+    - Publish date
+    - Number of pages
+    - Format (hardcover, e-book, etc.) 
+- Final feature list:
+    - Categorical (dropped columns with < 15 observations):
+        - Part of a series
+        - Top author (list of Forbes' top earning authors 2017 & 2018)
+        - Genre 
+        - Publishing company
+        - Month of publishing
+    - Continuous:
+        - Rating
 
 ### Visuals
 
@@ -88,11 +97,17 @@ Out of the 551 bestselling books in the data set, 307 were published by the Top 
 
 ## Modeling
 
-I ran a variety of classification models. Here I have only highlighted the baseline model and the final model. For a look at the full set of models, refer to the "Modeling" notebook in this repo. In selecting a "final model," I chose to focus on accuracy score as the best measure of evaluating models. This is due to the fact that I view a false positive and a false negative as having equal importance. In the first case (false positive), the model would predict a book to be a bestseller when in fact it is not. In the latter case (false negative), the model would predict that a book would not be a bestseller, when in fact it was. From the perspective of a publishing company, the first case is a bad investment (the company would make less than expected on a particular book given the incorrect prediction that it would be a bestseller) and the second case is a missed opportunity (the company would miss out on the chance to make money on a bestselling book given the model's incorrect prediction).
+I ran a variety of classification models. Here I have only highlighted the baseline model and the final model. For a look at the full set of models, refer to the "Modeling" notebook in this repo. 
+
+In selecting a "final model," I chose to focus on accuracy score as the best measure of evaluating models. This is due to the fact that I view a false positive and a false negative as having equal importance. 
+    - False positive: model would predict a book to be a bestseller when in fact it is not
+    - False negative: model would predict that a book would not be a bestseller, when in fact it was
+
+From the perspective of a publishing company, a false positive would become a bad investment (the company would make less than expected on a particular book given the incorrect prediction that it would be a bestseller) and a false negative is a missed opportunity (the company would miss out on the chance to make money on a bestselling book given the model's incorrect prediction).
 
 ### Baseline: Dummy Classifier
 
-I used Sklearn's Dummy Classifier (parameter for strategy was "most frequent") to create a baseline model. This model looks at the distibution of the data across classes and predicts each observation as the most frequent class. In this case, a larger proportion of the observations were non-bestsellers, so the model always predicted that a book was not a bestseller. As a result, the model had an accuracy score (67-68%) roughly equal to the distribution of the data by class (66% non-bestsellers) with the difference attributed to the fact that the data was split into training and testing sets, so the exact distribution varied.
+I used Sklearn's Dummy Classifier (parameter for strategy was "most frequent") to create a baseline model. This model looks at the distibution of the data across classes and predicts each observation as the most frequent class. In this case, a larger proportion of the observations were non-bestsellers, so the model always predicted that a book was not a bestseller. As a result, the model had an **accuracy score of 67-68%**, roughly equal to the distribution of the data by class (66% non-bestsellers) with the difference attributed to the fact that the data was split into training and testing sets, so the exact distribution varied.
 
 ![](/Plots/Confusion_Matrix_baseline.png)
 
@@ -104,7 +119,7 @@ The model which performed the best in terms of accuracy was Logistic Regression 
 
 ![](/Plots/Confusion_Matrix_Log.png)
 
-The confusion matrix shows that the model correctly predicted 41 positives and 202 negatives, while incorrectly classifying 20 negatives and 67 positives for a final accuracy score of ~74%. Given the class imbalance of the data set, the model performed better when classifying the more frequent class (negatives).
+The confusion matrix shows that the model correctly predicted 41 positives and 202 negatives, while incorrectly classifying 20 negatives and 67 positives for a **final accuracy score of ~74%**. Given the class imbalance of the data set, the model performed better when classifying the more frequent class (negatives).
 
 ![](/Plots/ROC_AUC.png)
 

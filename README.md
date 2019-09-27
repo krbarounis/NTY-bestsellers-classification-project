@@ -100,7 +100,9 @@ Out of the 551 bestselling books in the data set, 307 were published by the Top 
 I ran a variety of classification models. Here I have only highlighted the baseline model and the final model. For a look at the full set of models, refer to the "Modeling" notebook in this repo. 
 
 In selecting a "final model," I chose to focus on accuracy score as the best measure of evaluating models. This is due to the fact that I view a false positive and a false negative as having equal importance. 
-    - False positive: model would predict a book to be a bestseller when in fact it is not
+<br>
+    - False positive: model would predict a book to be a bestseller when in fact it is not 
+<br>
     - False negative: model would predict that a book would not be a bestseller, when in fact it was
 
 From the perspective of a publishing company, a false positive would become a bad investment (the company would make less than expected on a particular book given the incorrect prediction that it would be a bestseller) and a false negative is a missed opportunity (the company would miss out on the chance to make money on a bestselling book given the model's incorrect prediction).
@@ -123,7 +125,7 @@ The confusion matrix shows that the model correctly predicted 41 positives and 2
 
 ![](/Plots/ROC_AUC.png)
 
-AUC = .779.
+The ROC curve plots the true positive rate vs. the false positive rate at different classification thresholds, i.e. the model's ability to distinguish between classes. This model has an AUC score of .779.
 
 #### Coefficients
 

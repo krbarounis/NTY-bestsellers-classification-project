@@ -6,8 +6,9 @@
 <br>
     - [Cleaning](#cleaning)
     <br>
-    - [Observations and Features](#observations-and-features)
+    - [Observations](#observations)
     <br>
+    - [Features](#features)
     - [Visuals](#visuals)
     <br>
 [Modeling](#modeling)
@@ -20,7 +21,7 @@
 
 ## Intro
 
-This classification project aims to predict if a book will appear on any of the New York Times bestseller lists.
+This classification project aims to predict if a book will appear on any of the New York Times bestseller lists. I am an avid reader, and while the NYT bestseller lists are contested and, they are still considered to be a _____.
 
 ## Tech Stack
 
@@ -51,12 +52,13 @@ Some preprocessing steps:
 - Removing and/or filling in rows with null values
 - Grouping imprints and subsidiaries of the top 5 publishing companies into single groups
 
-### Observations and Features
-
+### Observations
 - 1646 total observations
     - 551 bestsellers
     - 1095 non-bestsellers
-- Data from scraping:
+    
+### Features
+- Original dataframe from web scraping:
     - Title
     - Author
     - Goodreads rating (based on user input)
@@ -65,7 +67,8 @@ Some preprocessing steps:
     - Publish date
     - Number of pages
     - Format (hardcover, e-book, etc.) 
-- Final feature list:
+    
+- **Final feature list**:
     - Categorical (dropped columns with < 15 observations):
         - Part of a series
         - Top author (list of Forbes' top earning authors 2017 & 2018)
@@ -93,7 +96,7 @@ The average Goodreads rating for NYT bestsellers is only slightly higher (~4.03)
 
 ![](/Plots/Top_5_publishing_companies.png)
 
-Out of the 551 bestselling books in the data set, 307 were published by the Top 5 publishing companies (include top 5 list here). However, the Top 5 also account for a large proportion of the non-bestselling books. It is evident that the Top 5 have a big market share, but ultimately these companies only published 6% more bestsellers out of all the books they account for when compared to the remaining publishing companies in the data set.
+Out of the 551 bestselling books in the data set, 307 were published by the Top 5 publishing companies (Penguin Random House, Harper Collins, Macmillan, Simon & Schuster, Hachette Livre). However, the Top 5 also account for a large proportion of the non-bestselling books. It is evident that the Top 5 have a big market share, but ultimately these companies only published 6% more bestsellers out of all the books they account for when compared to the remaining publishing companies in the data set.
 
 ## Modeling
 

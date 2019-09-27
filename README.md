@@ -59,7 +59,7 @@ Some preprocessing steps:
     - 551 bestsellers
     - 1095 non-bestsellers
 - 37 features after getting dummies for categorical data
-    - Part of a series (Y/N)
+    - Part of a series (Yes/No)
     - Goodreads rating (based on user input)
     - Goodreads genre (based on most user tags)
     - Top author (Y/N) (list of Forbes' top earning authors 2017 & 2018)
@@ -85,7 +85,6 @@ The average Goodreads rating for NYT bestsellers is only slightly higher (~4.03)
 ![](/Plots/Top_5_publishing_companies.png)
 
 Out of the 551 bestselling books in the data set, 307 were published by the Top 5 publishing companies (include top 5 list here). However, the Top 5 also account for a large proportion of the non-bestselling books. It is evident that the Top 5 have a big market share, but ultimately these companies only published 6% more bestsellers out of all the books they account for when compared to the remaining publishing companies in the data set.
-
 
 ## Modeling
 

@@ -21,7 +21,7 @@
 
 ## Intro
 
-This classification project aims to predict if a book will appear on any of the New York Times bestseller lists. I am an avid reader, and while the NYT bestseller lists are contested and, they are still considered to be a _____.
+This classification project aims to predict if a book will appear on any of the New York Times' bestseller lists.
 
 ## Tech Stack
 

@@ -106,6 +106,10 @@ The model which performed the best in terms of accuracy was Logistic Regression 
 
 The confusion matrix shows that the model correctly predicted 41 positives and 202 negatives, while incorrectly classifying 20 negatives and 67 positives for a final accuracy score of ~74%. Given the class imbalance of the data set, the model performed better when classifying the more frequent class (negatives).
 
+![](/Plots/ROC_AUC.png)
+
+AUC = .779.
+
 #### Coefficients
 
 Features which most contributed to a higher likelihood of being in the positive class (as indicated by a positive, large coefficient):

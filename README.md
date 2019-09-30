@@ -45,12 +45,12 @@ In order to both prepare and understand the data prior to running models, I comp
 ### Cleaning
 
 Some preprocessing steps:
-- Removing duplicate books returned by the NYT API 
-- Adding a column of 0's and 1's for the target variable where 1's reflect bestselling books
-- removing duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers, but we don't know this information until we join the data and identifying books that were returned from both NYT API and Goodreads)
-- Converting non-categorical data types from strings to numbers
-- Removing and/or filling in rows with null values
-- Grouping imprints and subsidiaries of the top 5 publishing companies into single groups
+- Remove duplicate books returned by the NYT API 
+- Add a column of 0's and 1's for the target variable where 1's reflect bestselling books
+- Remove duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers, but we don't know this information until we join the data and identifying books that were returned from both NYT API and Goodreads)
+- Convert non-categorical data types from strings to numbers
+- Remove and/or filling in rows with null values
+- Group imprints and subsidiaries of the top 5 publishing companies into single groups
 
 ### Observations
 - 1646 total observations

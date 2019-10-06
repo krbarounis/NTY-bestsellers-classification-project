@@ -8,7 +8,7 @@
     <br>
     - [Observations](#observations)
     <br>
-    - [Features](#features)
+    - [Features](#features)<br>
     - [Visuals](#visuals)
     <br>
 [Modeling](#modeling)

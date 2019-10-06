@@ -1,27 +1,29 @@
 # NYT-bestsellers-classification-project
 
-[Process](#process)
-<br>
-[The Data and EDA](#data-and-eda)
-<br>
-    - [Cleaning](#cleaning)
-    <br>
-    - [Observations](#observations)
-    <br>
-    - [Features](#features)<br>
-    - [Visuals](#visuals)
-    <br>
-[Modeling](#modeling)
-<br>
-    - [Baseline Model](#baseline-dummy-classifier)
-<br>
-    - [Final Model](#final-model-logistic-regression)
-<br>
-[Future Improvements](#future-improvements)
-
 ## Intro
 
 This classification project aims to predict if a book will appear on any of the New York Times' bestseller lists.
+- [Tech Stack](#tech-stack)
+
+- [Process](#process)
+
+- [Data and EDA](#data-and-eda)
+
+    - [Cleaning](#cleaning)
+
+    - [Observations](#observations)
+
+    - [Features](#features)
+    
+    - [Visuals](#visuals)
+    
+- [Modeling](#modeling)
+
+    - [Baseline Model](#baseline-dummy-classifier)
+
+    - [Final Model](#final-model-logistic-regression)
+
+- [Future Improvements](#future-improvements)
 
 ## Tech Stack
 
@@ -33,7 +35,7 @@ This classification project aims to predict if a book will appear on any of the 
     - Matplotlib
     - Seaborn
     - Scikit-learn
-    
+
 ## Process
 
 I gathered data through the New York Times' Book API as well as by scraping GoodReads.com. Bestsellers from 2017 to the present were sourced from the NYT API, while non-bestsellers from 2017-2018 were sourced from GoodReads. Ultimately, features for each book (both bestsellers and non-bestsellers) were also scraped from GoodReads.
@@ -148,7 +150,7 @@ Features which most contributed to a lower likelihood of being in the positive c
 - Genre: fiction
 - Genre: young adult
 
-## Future Improvements:
+## Future Improvements
 
 - More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. 
 

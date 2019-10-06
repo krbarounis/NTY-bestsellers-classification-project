@@ -25,7 +25,7 @@ This classification project aims to predict if a book will appear on any of the 
 
 ## Tech Stack
 
-- Python + Python libraries
+- Python libraries:
     - Requests
     - Selenium
     - Beautiful Soup
@@ -40,14 +40,13 @@ I gathered data through the New York Times' Book API as well as by scraping Good
 
 ## Data and EDA
 
-In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps as well as exploritory data analysis. 
+In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps followed by  exploritory data analysis. 
 
-### Cleaning
+### Cleaning 
 
-Some preprocessing steps:
 - Remove duplicate books returned by the NYT API 
 - Add a column of 0's and 1's for the target variable where 1's reflect bestselling books
-- Remove duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers, but we don't know this information until we join the data and identifying books that were returned from both NYT API and Goodreads)
+- Remove duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers which I can determine by identifying books that were returned from both the NYT API and Goodreads)
 - Convert non-categorical data types from strings to numbers
 - Remove and/or filling in rows with null values
 - Group imprints and subsidiaries of the top 5 publishing companies into single groups

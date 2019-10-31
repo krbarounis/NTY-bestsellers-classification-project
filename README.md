@@ -1,31 +1,33 @@
 # NYT-bestsellers-classification-project
 
-[Process](#process)
-<br>
-[The Data and EDA](#data-and-eda)
-<br>
-    - [Cleaning](#cleaning)
-    <br>
-    - [Observations](#observations)
-    <br>
-    - [Features](#features)
-    - [Visuals](#visuals)
-    <br>
-[Modeling](#modeling)
-<br>
-    - [Baseline Model](#baseline-dummy-classifier)
-<br>
-    - [Final Model](#final-model-logistic-regression)
-<br>
-[Future Improvements](#future-improvements)
-
 ## Intro
 
 This classification project aims to predict if a book will appear on any of the New York Times' bestseller lists.
+- [Tech Stack](#tech-stack)
+
+- [Process](#process)
+
+- [Data and EDA](#data-and-eda)
+
+    - [Cleaning](#cleaning)
+
+    - [Observations](#observations)
+
+    - [Features](#features)
+    
+    - [Visuals](#visuals)
+    
+- [Modeling](#modeling)
+
+    - [Baseline Model](#baseline-dummy-classifier)
+
+    - [Final Model](#final-model-logistic-regression)
+
+- [Future Improvements](#future-improvements)
 
 ## Tech Stack
 
-- Python + Python libraries
+- Python libraries:
     - Requests
     - Selenium
     - Beautiful Soup
@@ -33,21 +35,20 @@ This classification project aims to predict if a book will appear on any of the 
     - Matplotlib
     - Seaborn
     - Scikit-learn
-    
+
 ## Process
 
 I gathered data through the New York Times' Book API as well as by scraping GoodReads.com. Bestsellers from 2017 to the present were sourced from the NYT API, while non-bestsellers from 2017-2018 were sourced from GoodReads. Ultimately, features for each book (both bestsellers and non-bestsellers) were also scraped from GoodReads.
 
 ## Data and EDA
 
-In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps as well as exploritory data analysis. 
+In order to both prepare and understand the data prior to running models, I completed a number of preprocessing/cleaning steps followed by  exploritory data analysis. 
 
-### Cleaning
+### Cleaning 
 
-Some preprocessing steps:
 - Remove duplicate books returned by the NYT API 
 - Add a column of 0's and 1's for the target variable where 1's reflect bestselling books
-- Remove duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers, but we don't know this information until we join the data and identifying books that were returned from both NYT API and Goodreads)
+- Remove duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers which I can determine by identifying books that were returned from both the NYT API and Goodreads)
 - Convert non-categorical data types from strings to numbers
 - Remove and/or filling in rows with null values
 - Group imprints and subsidiaries of the top 5 publishing companies into single groups
@@ -149,9 +150,9 @@ Features which most contributed to a lower likelihood of being in the positive c
 - Genre: fiction
 - Genre: young adult
 
-## Future Improvements:
+## Future Improvements
 
 - More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. 
 
-- Different NYT API link: The link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. This was computationally inefficient as I had to store the entire list from the API and then iterate over it to filter out books that appeared on a list before 2017. Given more time, I would have liked to investigated the API further to find a url that was better suited for returning books within a certain date range. 
+- Different NYT API link: The link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. This was computationally inefficient as I had to store the entire list from the API and then iterate over it to filter out books that appeared on a list before 2017. Given more time, I would have liked to have investigated the API further to find a url that was better suited for returning books within a certain date range. 
 

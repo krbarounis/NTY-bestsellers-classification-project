@@ -152,7 +152,7 @@ Features which most contributed to a lower likelihood of being in the positive c
 
 ## Future Improvements
 
-- More bestsellers: The NYT API returned multiple duplciate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. 
+- More bestsellers: The NYT API returned multiple duplicate values and due to time constraints, I was not able to gather additional bestsellers in time for modeling. As a result, there was class imbalance present in my data set (2/3 of the data were not bestsellers) so the model performed better when classifying negative cases. Alternatively, I could implement SMOTE to create additional observations in the positive class.
 
 - Different NYT API link: The link I used returned over 32,000 results, after which point I selected only the books that were on a list between 2017 and the present. This was computationally inefficient as I had to store the entire list from the API and then iterate over it to filter out books that appeared on a list before 2017. Given more time, I would have liked to have investigated the API further to find a url that was better suited for returning books within a certain date range. 
 

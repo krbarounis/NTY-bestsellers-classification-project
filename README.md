@@ -50,7 +50,7 @@ In order to both prepare and understand the data prior to running models, I comp
 - Add a column of 0's and 1's for the target variable where 1's reflect bestselling books
 - Remove duplicate books from the combined dataframe (books scraped from Goodreads might have been NYT bestsellers which I can determine by identifying books that were returned from both the NYT API and Goodreads)
 - Convert non-categorical data types from strings to numbers
-- Remove and/or filling in rows with null values
+- Remove and/or fill in rows with null values
 - Group imprints and subsidiaries of the top 5 publishing companies into single groups
 
 ### Observations

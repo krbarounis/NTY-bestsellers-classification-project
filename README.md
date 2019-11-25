@@ -89,7 +89,7 @@ Of the 1646 total books in the data set, only 50 were written by top authors. Ho
 
 ![](/Plots/Publish_month_rating.png)
 
-This chart highlights the distribution of observations across ratings and months during which books were published. It is notable that fewer of the books in the data set were published in November and December when compared to the remaining 10 months and of those published in November and December, a larger proportion were bestsellers. These two features also end up being two of the strongest predictors of NYT bestsellers in the final model.
+This chart highlights the distribution of books across ratings and months during which books were published. It is notable that despite the fact that fewer books were published in November and December when compared to other months, a larger proportion of the books sold in those two months were bestsellers. Additionally, the average rating of books published in these two months is higher than that of books published in other months. These two features (published in Nov. or Dec.) end up being two of the strongest predictors of NYT bestsellers in the final model.
 
 ![](/Plots/Ratings.png)
 
